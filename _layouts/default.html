@@ -10,12 +10,18 @@
     <meta name="generator" content="Jekyll v3.9.0" />
     <meta property="og:title" content="Urban Photogrammetry" />
     <meta property="og:locale" content="en_AU" />
-    <link rel="canonical" href="https://urban-photogrammetry.org/" />
-    <meta property="og:url" content="https://urban-photogrammetry.org/" />
-    <meta property="og:site_name" content="urban-photogrammetry.org" />
+    <link rel="canonical" href="https://upo.sh/" />
+    <meta property="og:url" content="https://upo.sh/" />
+    <meta property="og:site_name" content="upo.sh" />
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="{{ page.title }}" />
 
+    {%- if page.redirect %}
+    <meta http-equiv="Refresh" content="0; url='{{ page.rurl }}'" />
+    <script>
+      window.location.replace("{{ page.rurl }}");
+    </script>
+    {%- else %}
     <link rel="stylesheet" href="/f/iA Writer Quattro/Webfonts/index.css">
     <link rel="stylesheet" href="/f/style.css?cb=1234">
 
@@ -23,18 +29,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/f/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/f/favicon-16x16.png">
     <link rel="manifest" href="/f/site.webmanifest">
-    {%- if page.redirect %}
-      {% capture pnum %}{% include berlin_get_page_idx.html %}{% endcapture %}
-      {% assign pnum = pnum | abs %}
-      <meta http-equiv="Refresh" content="0; url='{{ page.rurl | default: site.data.berlin[pnum]["mlid"] }}'" />
-    {%- endif %}
+    {%- endif -%}
   </head>
-
   <body>
     <div id="root">
       <div class="quattro">
 
+        {%- if page.redirect %}
+        This is a redirect to <a href="{{ page.rurl }}">here</a>.
+        {%- else -%}
         {{ content }}
+        {%- endif -%}
 
         <div class="footer-div">
           <a href="mailto:contact@website.urban-photogrammetry.org">Contact</a>
