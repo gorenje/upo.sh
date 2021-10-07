@@ -1,0 +1,11 @@
+.DS_Store
+*/.DS_Store
+.jekyll-metadata
+_site
+berlin/_tmpl.html
+script.py
+Makefile
+template.md
+script2.py
+*~
+Dockerfile
