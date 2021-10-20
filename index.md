@@ -1,8 +1,7 @@
 ---
 permalink: /
+title: Redirect
+redirect: yes
+rurl: https://urban-photogrammetry.org
 title: Urban Photogrammetry
 ---
-
-## Link Shortener
-
-The [Urban Photogrammetry](https://urban-photogrammetry.org) poor mans link shortener.
