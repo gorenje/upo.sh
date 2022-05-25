@@ -36,7 +36,7 @@
       <div class="quattro">
 
         {%- if page.redirect %}
-        This is a redirect to <a href="{{ page.rurl }}">here</a>.
+        This is a redirect to <a href="{{ page.rurl }}">{{ page.rurl }}</a>.
         {%- else -%}
         {{ content }}
         {%- endif -%}
